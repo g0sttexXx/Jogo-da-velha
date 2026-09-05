@@ -24,6 +24,21 @@ char jogador = 'X';
 
   tabuleiro [linha][coluna] = 'X';
 
+   //verifica se a posição é valida 
+
+  if (linha < 0 || linha > 2 ||
+coluna < 0 || coluna > 2) { 
+
+ printf ("n\Posicao invalida! 
+Tente novamente. \n");
+      Continue;
+}
+
+ //Verifica se a posição esta ocupada
+
+  if (tabuleiro [linha][coluna]
+
+
   printf ("\n");
 
   printf(" %c | %c | %c\n",
