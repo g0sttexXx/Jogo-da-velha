@@ -1,5 +1,54 @@
 #include <studio. h>
 
+int verificarVitoria(char 
+tabuleiro [3][3], char jogador) {
+
+     //Linhas
+for (int i = 0; i < 3; i++) {
+     if (tabuleiro [i][0] ==
+jogador &&
+     if (tabuleiro [i][1] ==
+jogador &&
+     if (tabuleiro [i][2] ==
+jogador) {
+
+       return 1;
+  }
+}
+    //Colunas
+     if (tabuleiro [0][i] ==
+jogador &&
+     if (tabuleiro [1][i] ==
+jogador &&
+     if (tabuleiro [2][i] ==
+jogador) {
+
+       return 1;
+ }
+     //Diagonal principal 
+     if (tabuleiro [0][0] ==
+jogador &&
+     if (tabuleiro [1][1] ==
+jogador &&
+     if (tabuleiro [2][2] ==
+jogador) {
+
+       return 1;
+}
+
+     //Diagonal secundária
+     if (tabuleiro [0][2] ==
+jogador &&
+     if (tabuleiro [1][1] ==
+jogador &&
+     if (tabuleiro [2][0] ==
+jogador) {
+
+       return 1;
+}
+      return 0;
+}
+
 int main() {
 
 char tabuleiro[3][3] = {
