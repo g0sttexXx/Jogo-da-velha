@@ -73,7 +73,7 @@ char jogador = 'X';
 
   tabuleiro [linha][coluna] = 'X';
 
-   //verifica se a posição é valida 
+   //verifica posição  
 
   if (linha < 0 || linha > 2 ||
 coluna < 0 || coluna > 2) { 
@@ -85,9 +85,18 @@ Tente novamente. \n");
 
  //Verifica se a posição esta ocupada
 
-  if (tabuleiro [linha][coluna]
+  if (tabuleiro [linha][coluna] 
+!= ' '){ 
+
+ printf ("n\Posicao está ocupada! 
+. \n");
+      Continue;
+}
+     //Coloca a peça 
+tabuleiro[linha][coluna] = jogador;
 
 
+   // mostra o tabuleiro
   printf ("\n");
 
   printf(" %c | %c | %c\n",
@@ -107,12 +116,33 @@ tabuleiro[2][0]
 tabuleiro[2][2]
 tabuleiro[2][2] );
 
+
+//Verifica a vitória
+if (verificarVitoria(tabuleiro, jogador))
+{ 
+
+  printf("\n====================
+=============\n")
+
+  printf("\n JOGADOR %c VENCEU!!!\n",
+jogador);
+
+  printf("\n====================
+=============\n")
+          
+       break;
+}
+
+    //Toca de jogador
+    if (jogador== 'X'){
+       jogador =0
    return 0;
 
     //Troca jogador
    if (jogador == 'X') {
     jogador ='0';
  } else{ jogador'X';
+}
 }
     return 0;
  }
