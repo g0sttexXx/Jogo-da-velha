@@ -1,4 +1,4 @@
-#include <studio. h>
+#include <stdio.h>
 
 int verificarVitoria(char 
 tabuleiro [3][3], char jogador) {
@@ -7,20 +7,21 @@ tabuleiro [3][3], char jogador) {
 for (int i = 0; i < 3; i++) {
      if (tabuleiro [i][0] ==
 jogador &&
-     if (tabuleiro [i][1] ==
+      tabuleiro [i][1] ==
 jogador &&
-     if (tabuleiro [i][2] ==
+      tabuleiro [i][2] ==
 jogador) {
 
        return 1;
   }
 }
     //Colunas
+    for(int i = 0; i < 3; i++)
      if (tabuleiro [0][i] ==
 jogador &&
-     if (tabuleiro [1][i] ==
+      tabuleiro [1][i] ==
 jogador &&
-     if (tabuleiro [2][i] ==
+      tabuleiro [2][i] ==
 jogador) {
 
        return 1;
@@ -28,9 +29,9 @@ jogador) {
      //Diagonal principal 
      if (tabuleiro [0][0] ==
 jogador &&
-     if (tabuleiro [1][1] ==
+      tabuleiro [1][1] ==
 jogador &&
-     if (tabuleiro [2][2] ==
+      tabuleiro [2][2] ==
 jogador) {
 
        return 1;
@@ -39,9 +40,9 @@ jogador) {
      //Diagonal secundária
      if (tabuleiro [0][2] ==
 jogador &&
-     if (tabuleiro [1][1] ==
+      tabuleiro [1][1] ==
 jogador &&
-     if (tabuleiro [2][0] ==
+      tabuleiro [2][0] ==
 jogador) {
 
        return 1;
@@ -52,9 +53,9 @@ jogador) {
 int main() {
 
 char tabuleiro[3][3] = {
-    {' '.' '.' '.},
-    {' '.' '.' '.},
-    {' '.' '.' '.}
+    {' ',' ',' '},
+    {' ',' ',' '},
+    {' ',' ',' '}
 };
 
 int linha;
@@ -63,7 +64,7 @@ char jogador = 'X';
 
     while (1) {
 
-  printf(\njogador %c\n, jogador);
+  printf("\njogador %c\n", jogador);
 
   printf("Escolha uma linha (0, 1 ou 2): ");
     scanf("%d", &linha);
@@ -78,9 +79,8 @@ char jogador = 'X';
   if (linha < 0 || linha > 2 ||
 coluna < 0 || coluna > 2) { 
 
- printf ("n\Posicao invalida! 
-Tente novamente. \n");
-      Continue;
+ printf("\nPosicao invalida!.\n");
+      continue;
 }
 
  //Verifica se a posição esta ocupada
@@ -88,9 +88,8 @@ Tente novamente. \n");
   if (tabuleiro [linha][coluna] 
 != ' '){ 
 
- printf ("n\Posicao está ocupada! 
-. \n");
-      Continue;
+ printf("\nPosição está ocupada!\n");
+      continue;
 }
      //Coloca a peça 
 tabuleiro[linha][coluna] = jogador;
@@ -100,20 +99,20 @@ tabuleiro[linha][coluna] = jogador;
   printf ("\n");
 
   printf(" %c | %c | %c\n",
-tabuleiro[0][0]
-tabuleiro[0][0]
-tabuleiro[0][2] );
+tabuleiro[0][0],
+tabuleiro[0][0],
+tabuleiro[0][2]);
 
   printf("---+---+---\n");
   printf(" %c | %c | %c\n",
-tabuleiro[1][0] 
-tabuleiro[1][1]
+tabuleiro[1][0],
+tabuleiro[1][1],
 tabuleiro[1][2] );  
 
     printf("---+---+---\n");
   printf(" %c | %c | %c\n",
-tabuleiro[2][0] 
-tabuleiro[2][2]
+tabuleiro[2][0],
+tabuleiro[2][2],
 tabuleiro[2][2] );
 
 
@@ -121,27 +120,23 @@ tabuleiro[2][2] );
 if (verificarVitoria(tabuleiro, jogador))
 { 
 
-  printf("\n====================
-=============\n")
-
+  printf("\n=================\n");
   printf("\n JOGADOR %c VENCEU!!!\n",
 jogador);
 
-  printf("\n====================
-=============\n")
+  printf("\n==================\n");
           
        break;
 }
-
     //Toca de jogador
     if (jogador== 'X'){
-       jogador =0
+       jogador =0;
    return 0;
 
     //Troca jogador
    if (jogador == 'X') {
     jogador ='0';
- } else{ jogador'X';
+ } else{jogador; 'X';
 }
 }
     return 0;
