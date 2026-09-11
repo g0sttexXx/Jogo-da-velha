@@ -17,7 +17,7 @@ jogador) {
 
 }
     //Colunas
-    for(int i = 0; i < 3; i++)
+    for(int i = 0; i < 3; i++){
      if (tabuleiro [0][i] ==
 jogador &&
       tabuleiro [1][i] ==
@@ -27,6 +27,7 @@ jogador) {
 
        return 1;
  }
+    }
      //Diagonal principal 
      if (tabuleiro [0][0] ==
 jogador &&
